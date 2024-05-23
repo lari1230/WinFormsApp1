@@ -1,3 +1,5 @@
+using System.Drawing.Drawing2D;
+
 namespace WinFormsApp4
 {
     public partial class Form1 : Form
@@ -8,9 +10,8 @@ namespace WinFormsApp4
         }
         List<string> picturesPath = new List<string>();
 
-        
-
-        private void button1_Click(object sender, EventArgs e)
+        private int elemIndex = 0;
+        private void buttonFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -27,6 +28,10 @@ namespace WinFormsApp4
                         picturesPath.Add(items[i].FullName);
                     }
                 }
+                trackBar1.Maximum = listBox1.Items.Count-1;
+                trackBar1.Visible = true;
+                progressBar1.Maximum = listBox1.Items.Count-1;
+                progressBar1.Visible = true;
             }
             //OpenFileDialog ofd = new OpenFileDialog();
             //ofd.Filter = "ImageFiles|.png;*.jpg;*.jpeg;";
@@ -38,16 +43,56 @@ namespace WinFormsApp4
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.Items.Count > 0 && listBox1.SelectedIndex != 0) pictureBox1.Image = Image.FromFile(picturesPath[listBox1.SelectedIndex]);
+            if (listBox1.Items.Count > 0)
+            {
+                SetPictureByIndex(listBox1.SelectedIndex);
+                trackBar1.Value = listBox1.SelectedIndex;
+                elemIndex = listBox1.SelectedIndex;
+                progressBar1.Value = listBox1.SelectedIndex;
+            }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonPrevios_Click(object sender, EventArgs e)
         {
-            if (picturesPath.Count > 0) pictureBox1.Image = Image.FromFile(picturesPath[listBox1.SelectedIndex - 1]);
+            if (picturesPath.Count != 0)
+            {
+                elemIndex = elemIndex - 1 < 0 ? picturesPath.Count - 1 : elemIndex - 1;
+                SetPictureByIndex(elemIndex);
+                trackBar1.Value = elemIndex;
+                progressBar1.Value = elemIndex;
+            }
+        }
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("asdf");
+            if (picturesPath.Count != 0)
+            {
+                elemIndex = elemIndex + 1 >= picturesPath.Count ? 0 : elemIndex + 1;
+                SetPictureByIndex(elemIndex);
+                trackBar1.Value = elemIndex;
+                progressBar1.Value = elemIndex;
+            }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = timer1.Enabled ? false : true;
+        }
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Image.FromFile(picturesPath[trackBar1.Value]);
+            progressBar1.Value = trackBar1.Value;
+        }
+        private void SetPictureByIndex(int index)
+        {
+            pictureBox1.Image = Image.FromFile(picturesPath[index]);
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            buttonNext_Click(sender, e);
+        }
 
-        }
-        private void button3_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            if (picturesPath.Count != listBox1.SelectedIndex) pictureBox1.Image = Image.FromFile(picturesPath[listBox1.SelectedIndex + 1]);
+            MessageBox.Show("Иди Нахуй", "Пидр");
         }
     }
 }
