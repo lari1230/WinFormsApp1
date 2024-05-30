@@ -94,6 +94,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "File";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -117,6 +118,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox1
             // 
@@ -136,7 +138,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Я люблю в Очко";
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
