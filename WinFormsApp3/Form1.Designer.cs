@@ -41,8 +41,21 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -69,12 +82,13 @@
             this.groupBox1.Controls.Add(this.checkBox3);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 225);
+            this.groupBox1.Size = new System.Drawing.Size(200, 199);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Degreies";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // checkBox4
             // 
@@ -99,7 +113,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(14, 85);
+            this.checkBox2.Location = new System.Drawing.Point(14, 81);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(91, 19);
             this.checkBox2.TabIndex = 1;
@@ -122,9 +136,9 @@
             this.groupBox2.Controls.Add(this.radioButton3);
             this.groupBox2.Controls.Add(this.radioButton2);
             this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(218, 16);
+            this.groupBox2.Location = new System.Drawing.Point(218, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(215, 221);
+            this.groupBox2.Size = new System.Drawing.Size(215, 199);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PL";
@@ -139,7 +153,6 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Java";
             this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButton3
             // 
@@ -151,7 +164,6 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Python";
             this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -163,7 +175,6 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "C#";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += radioButton_CheckedChanged;
             // 
             // radioButton1
             // 
@@ -175,7 +186,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "C/C++";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += radioButton_CheckedChanged;
             // 
             // label2
             // 
@@ -184,6 +194,102 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 6;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.closeToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem1});
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // closeToolStripMenuItem1
+            // 
+            this.closeToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem2});
+            this.closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
+            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem1.Text = "Close";
+            // 
+            // closeToolStripMenuItem2
+            // 
+            this.closeToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem3});
+            this.closeToolStripMenuItem2.Name = "closeToolStripMenuItem2";
+            this.closeToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem2.Text = "Close";
+            // 
+            // closeToolStripMenuItem3
+            // 
+            this.closeToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem4});
+            this.closeToolStripMenuItem3.Name = "closeToolStripMenuItem3";
+            this.closeToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem3.Text = "Close";
+            // 
+            // closeToolStripMenuItem4
+            // 
+            this.closeToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem5});
+            this.closeToolStripMenuItem4.Name = "closeToolStripMenuItem4";
+            this.closeToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem4.Text = "Close";
+            // 
+            // closeToolStripMenuItem5
+            // 
+            this.closeToolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem6});
+            this.closeToolStripMenuItem5.Name = "closeToolStripMenuItem5";
+            this.closeToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem5.Text = "Close";
+            // 
+            // closeToolStripMenuItem6
+            // 
+            this.closeToolStripMenuItem6.Name = "closeToolStripMenuItem6";
+            this.closeToolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem6.Text = "Close";
+            this.closeToolStripMenuItem6.Click += new System.EventHandler(this.closeToolStripMenuItem6_Click);
             // 
             // Form1
             // 
@@ -195,12 +301,15 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +330,17 @@
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Label label2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem closeToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem closeToolStripMenuItem1;
+        private ToolStripMenuItem closeToolStripMenuItem2;
+        private ToolStripMenuItem closeToolStripMenuItem3;
+        private ToolStripMenuItem closeToolStripMenuItem4;
+        private ToolStripMenuItem closeToolStripMenuItem5;
+        private ToolStripMenuItem closeToolStripMenuItem6;
     }
 }

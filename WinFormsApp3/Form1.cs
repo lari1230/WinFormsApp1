@@ -43,6 +43,19 @@ namespace WinFormsApp3
             label2.Text = radioButton.Text;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Close();
+        }
+
+        private void closeToolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
